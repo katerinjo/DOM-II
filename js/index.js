@@ -81,3 +81,10 @@ window.onresize = () => background.change(-999)
 // 9) 'scroll'; Increase copyright date in footer on scroll.
 
 window.addEventListener('scroll', timeTravel)
+
+// 10) 'copy'; Anything copied on the page will put 'Hoborg' into the clipboard.
+
+document.querySelectorAll('p, h1, h2, h4').forEach(e => e.addEventListener('copy', (event) => {
+    event.clipboardData.setData('text/plain', 'Hoborg');
+    event.preventDefault();
+}))
