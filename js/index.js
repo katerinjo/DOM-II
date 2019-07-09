@@ -50,3 +50,9 @@ document.querySelector('header img').addEventListener('dragend', e => e.target.s
 window.onload = event => {
     event.target.querySelector('h1').textContent = 'Click Me!'
 }
+
+document.querySelectorAll('.btn')[1].addEventListener('focus', scream)
+
+const background = Stretchy(document.body, n => `background-color: #${Math.max(n, 0).toString(16).padStart(6, '0')}`, 16777215)
+
+window.onresize = () => background.change(-999)
