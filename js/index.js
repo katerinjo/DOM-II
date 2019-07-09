@@ -2,7 +2,7 @@
 
 const debugLog = (...anything) => document.querySelector('.logo-heading').textContent = anything
 
-const allImgs = document.querySelectorAll('img')
+const allImgs = document.querySelectorAll('section img')
 
 allImgs.forEach(img => img.addEventListener('mouseenter', e => e.target.setAttribute('style', 'visibility: hidden')))
 
@@ -44,3 +44,5 @@ document.querySelectorAll('nav a').forEach(e => {
 })
 
 document.onwheel = scream
+
+document.querySelector('header img').addEventListener('dragend', e => e.target.style = 'visibility: hidden')
