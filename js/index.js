@@ -31,3 +31,5 @@ const stretchyContainer = Stretchy(document.querySelector('.container.home'), n 
 document.addEventListener('keydown', () => stretchyContainer.set(800))
 document.querySelector('h1').addEventListener('click', () => stretchyContainer.change(9))
 document.querySelector('h1').addEventListener('dblclick', () => stretchyContainer.change(-70))
+
+document.querySelector('nav').addEventListener('click', e => e.preventDefault())
