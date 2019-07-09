@@ -30,6 +30,13 @@ function scream() {
     document.querySelector('.destination:last-child p').textContent += ' A'
 }
 
+function timeTravel() {
+    const e = document.querySelector('footer p')
+    const tokens = e.textContent.split(' ')
+    const yearText = tokens[tokens.length - 1]
+    e.textContent = [...tokens.slice(0, tokens.length - 1), String(Number(yearText) + 1)].join(' ')
+}
+
 // 1) 'mouseenter'; Section Images disappear on hover.
 
 const allImgs = document.querySelectorAll('section img')
@@ -70,3 +77,7 @@ window.onload = event => {
 const background = Stretchy(document.body, n => `background-color: #${Math.max(n, 0).toString(16).padStart(6, '0')}`, 16777215)
 
 window.onresize = () => background.change(-999)
+
+// 9) 'scroll'; Increase copyright date in footer on scroll.
+
+window.addEventListener('scroll', timeTravel)
