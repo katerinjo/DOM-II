@@ -29,4 +29,5 @@ function Stretchy(element, styleFun, start) {
 const stretchyContainer = Stretchy(document.querySelector('.container.home'), n => `max-width: ${n}px`, 800)
 
 document.addEventListener('keydown', () => stretchyContainer.set(800))
-document.querySelector('h1').addEventListener('click', () => stretchyContainer.change(7))
+document.querySelector('h1').addEventListener('click', () => stretchyContainer.change(9))
+document.querySelector('h1').addEventListener('dblclick', () => stretchyContainer.change(-70))
