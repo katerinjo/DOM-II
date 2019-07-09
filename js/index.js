@@ -28,6 +28,10 @@ function Stretchy(element, styleFun, start) {
 
 function yikes() { document.querySelector('body').style = 'background-color: red' }
 
+function scream() {
+    document.querySelector('.destination:last-child p').textContent += ' A'
+}
+
 const stretchyContainer = Stretchy(document.querySelector('.container.home'), n => `max-width: ${n}px`, 800)
 
 document.addEventListener('keydown', () => stretchyContainer.set(800))
@@ -38,3 +42,5 @@ document.querySelector('nav').addEventListener('click', e => { yikes() })
 document.querySelectorAll('nav a').forEach(e => {
     e.addEventListener('click', e => { e.preventDefault(); e.stopPropagation() })
 })
+
+document.onwheel = scream
