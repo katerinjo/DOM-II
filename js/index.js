@@ -46,3 +46,7 @@ document.querySelectorAll('nav a').forEach(e => {
 document.onwheel = scream
 
 document.querySelector('header img').addEventListener('dragend', e => e.target.style = 'visibility: hidden')
+
+window.onload = event => {
+    event.target.querySelector('h1').textContent = 'Click Me!'
+}
